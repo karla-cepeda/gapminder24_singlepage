@@ -10,6 +10,7 @@ import pandas as pd
 
 # Create the dash app
 app = dash.Dash(__name__)
+server = app.server 
 
 # Create figure to add to app
 fig = px.scatter(data_frame=gapminder, x="gdpPercap", y="lifeExp",
@@ -68,4 +69,4 @@ app.layout = html.Div(style={'backgroundColor': colors['background']},children=[
 
 
 if __name__ == '__main__':
-    app.run_server(port=8091,debug=True)
+    app.run_server(debug=False)
